@@ -5,9 +5,9 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jestrade/"
+    "url": "https://github.com/cristiancho29/"
   },
-  "author": "@jestrade",
+  "author": "@cristiancho29",
   "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",

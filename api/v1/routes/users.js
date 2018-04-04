@@ -8,7 +8,8 @@ router.param("id", controller.params);
 
 router.route("/")
     .get(controller.validateToken,controller.all)
-    .post(controller.validateToken,controller.post);
+    //.post(controller.validateToken,controller.post);
+    .post(controller.post);
 
 router.route("/login")
     .post(controller.login);

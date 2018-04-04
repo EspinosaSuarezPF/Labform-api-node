@@ -53,7 +53,6 @@ exports.all = (req, res, next) => {
             });      
 };
 
-
 exports.post = (req, res, next) => {
     let body = req.body; 
     const user = new User(body);
@@ -83,11 +82,9 @@ exports.logout = (req, res, next) => {
 exports.login = (req, res, next) => { 
     
      User.findOne({
-     email: req.body.email
-          }, function(err, user) {
-        
+            email: req.body.email}, 
+            function(err, user) {
             if (err) throw err;
-        
             if (!user) {
               res.json({ success: false, message: 'Authentication failed. User not found.' });
             } else if (user) {
@@ -95,26 +92,48 @@ exports.login = (req, res, next) => {
               if (bcrypt.compareSync(req.body.password, user.password)) {
                 
                 const token = jwt.sign(user, config.secret);
-                
-                
-                
                 res.json({
                   success: true,
                   message: 'Access granted',
                   token: token
                 });
-              } else {
-                res.json({ success: false, message: 'Authentication failed. Wrong password.' });
-              }   
-        
+              } 
+              else {
+                res.json(
+                    { 
+                        success: false, 
+                        message: 'Authentication failed. Wrong password.'
+                    });
+                }   
             }
-        
           });
 };
 
 exports.put = (req, res, next) => {
-    
+    User.findOneAndUpdate({
+        email:req.body.email},req.body,
+        function(err,user){
+            if(err) throw err;
+            if(!user){
+                res.json({success:false,message:"Usuario inexistente"});
+            }
+            else{
+                res.status(200).send({success:true,message:"Usuario actualizado"});
+            }
+        });
 };
 
 exports.delete = (req, res, next) => { 
+    User.findOne({email:req.body.email},
+    function(err,user){
+        if(err) console.log("error findOne"+err);
+        if(!user){
+            res.json({success:false,message:"Usuario inexistente"});
+        }
+        else{
+            user.remove();
+            res.status(200).send({success:true,message:"Usuario eliminado"});
+        }
+    });
 };
+

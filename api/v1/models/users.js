@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserModel = new Schema({
-    name: {
+    username:{
         type: String,
         required: true
     },
@@ -16,9 +16,10 @@ const UserModel = new Schema({
         type: String,
         required: true
     },
-    admin: {
-        type: Boolean,
-        required: true
+    tipo:{
+        type:String,
+        required:true,
+        default:"default"
     }
 }, {
     timestamps: true

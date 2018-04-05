@@ -54,10 +54,10 @@ exports.all = (req, res, next) => {
 };
 
 exports.post = (req, res, next) => {
-    let body = req.body; 
+    let body = req.body;
+    const password = bcrypt.hashSync(body.password, saltRounds);
+    body.password = password;
     const user = new User(body);
-    const password = bcrypt.hashSync(user.password, saltRounds);
-    user.password = password;
     
     user.save()
         .then( newuser => {

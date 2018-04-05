@@ -9,6 +9,11 @@ const TipoEnsayoModel = new Schema({
     name:{
         type:String,
         required:true
+    },
+    question:{
+        type:[Object],
+        required:true
+        
     }
 });
 

@@ -38,9 +38,9 @@ exports.validateToken = (req, res, next) => {
                     });
       } else {
         return res.status(403).send({ 
-        success: false, 
-        message: 'No token provided.' 
-    });
+            success: false, 
+            message: 'No token provided.' 
+        });
       }
 };
 exports.all = (req, res, next) => {

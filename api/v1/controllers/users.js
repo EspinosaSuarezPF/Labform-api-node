@@ -58,6 +58,7 @@ exports.post = (req, res, next) => {
     const password = bcrypt.hashSync(body.password, saltRounds);
     body.password = password;
     const user = new User(body);
+    console.log(user)
     
     user.save()
         .then( newuser => {

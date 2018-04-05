@@ -1,7 +1,10 @@
 "use strict";
 
 const mongoose = require("mongoose");
+const bluebird = require('bluebird');
 const Schema = mongoose.Schema;
+
+mongoose.Promise = bluebird;
 
 const UserModel = new Schema({
     username:{

@@ -3,8 +3,12 @@
 const User = require("./../models/users");
 const config = require("./../../../config");
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken'); 
+const jwt = require('jsonwebtoken');
+const mongoose = require("mongoose");
+const bluebird = require('bluebird');
 const saltRounds = 10;
+
+mongoose.Promise = bluebird;
 
 exports.params = (req, res, next, id) => {
     User.findById(id)

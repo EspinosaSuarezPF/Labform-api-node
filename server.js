@@ -3,14 +3,14 @@
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require('body-parser');
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
 const cors = require("cors");
 
 const config = require("./config");
 const api = require("./api/v1");
 
 // Connect to database
-mongoose.connect(config.db.url, { useMongoClient: true });
+//mongoose.connect(config.db.url, { useMongoClient: true });
 
 const app = express(); 
 app.use(cors());

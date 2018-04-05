@@ -10,7 +10,6 @@ const config = require("./config");
 const api = require("./api/v1");
 
 // Connect to database
-mongoose.Promise = Promise;
 mongoose.connect(config.db.url, { useMongoClient: true });
 
 const app = express(); 

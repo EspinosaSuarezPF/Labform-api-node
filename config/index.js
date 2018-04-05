@@ -6,7 +6,7 @@ const config = {
     hostname: "127.0.0.1",
     port: 27017,
     db: {
-        url: "mongodb://localhost/labdb"
+        url: "mongodb://default:defaultpassword@ds235609.mlab.com:35609/labdb"
     },
     secret: "prueba123",
 };

@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const bluebird = require('bluebird');
 const saltRounds = 10;
 
-mongoose.Promise = bluebird;
+mongoose.Promise = Promise;
 
 exports.params = (req, res, next, id) => {
     User.findById(id)

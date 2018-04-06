@@ -10,7 +10,7 @@ exports.post = (req,res)=>{
             res.json(newtipoensayo);
         })
         .catch( err => {
-            next(new Error(err));
+            throw err;
         });
 };
 exports.get = ()=>{};

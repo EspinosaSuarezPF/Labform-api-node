@@ -2,9 +2,9 @@
 
 const mongoose = require("mongoose");
 //const bluebird = require('bluebird');
-const Schema = mongoose.Schema;
 
-//mongoose.Promise = bluebird;
+mongoose.Promise = global.Promise;
+const Schema = mongoose.Schema;
 
 const UserModel = new Schema({
     username:{

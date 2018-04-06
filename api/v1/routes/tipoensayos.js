@@ -1,7 +1,7 @@
 "use strict";
 
 const router = require("express").Router();
-const controller = require("./../controllers/tiposensayos");
+const controller = require("./../controllers/tipoensayos");
 
 router.route("/")
 .get()

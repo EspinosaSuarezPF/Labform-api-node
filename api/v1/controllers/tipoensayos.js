@@ -1,7 +1,7 @@
 "use strict";
 const config = require("./../../../config");
 const jwt = require('jsonwebtoken'); 
-const TipoEnsayo = require("./../models/tiposensayos");
+const TipoEnsayo = require("./../models/tipoensayos");
 
 exports.post = (req,res)=>{
     const tipoensayo = new TipoEnsayo(req.body);

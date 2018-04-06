@@ -4,6 +4,8 @@ const router = require("express").Router();
 const controller = require("./../controllers/ensayos");
 
 router.route("/")
+.get(controller.validateToken,controller.all)
+.post(controller.validateToken,controller.post);
 /*
 .get()
 .post()
@@ -12,8 +14,8 @@ router.route("/")
 */
 
 router.route("/:id")
-    .get()
-    .put()
-    .delete();
+    .get(controller.validateToken,controller.get)
+    .put(controller.validateToken,controller.put)
+    .delete(controller.validateToken,controller.delete);
     
 module.exports = router;

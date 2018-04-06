@@ -4,7 +4,11 @@ const jwt = require('jsonwebtoken');
 const TipoEnsayo = require("./../models/tipoensayos");
 
 exports.post = (req,res)=>{
-    const tipoensayo = new TipoEnsayo(req.body);
+    let body= req.body;
+    body.question= body.question.JSON.stringify();
+    
+    const tipoensayo = new TipoEnsayo(body
+    );
     tipoensayo.save()
     .then( newtipoensayo => {
             res.json(newtipoensayo);

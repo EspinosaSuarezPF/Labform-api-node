@@ -6,7 +6,7 @@ const controller = require("./../controllers/tipoensayos");
 router.route("/")
 
 .get()
-.post(controller.validateToken,controller.post)
+.post(controller.post)
 .put()
 .delete();
 

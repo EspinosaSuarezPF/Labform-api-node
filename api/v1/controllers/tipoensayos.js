@@ -5,7 +5,7 @@ const TipoEnsayo = require("./../models/tipoensayos");
 
 exports.post = (req,res)=>{
     let body= req.body;
-    body.question= body.question.JSON.stringify();
+    body.question= JSON.stringify(body.question);
     
     const tipoensayo = new TipoEnsayo(body
     );

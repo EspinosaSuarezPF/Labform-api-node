@@ -4,7 +4,7 @@ const router = require("express").Router();
 const controller = require("./../controllers/tipoensayos");
 
 router.route("/")
-.get()
+.get(controller.get)
 .post();
 /*
 .get()

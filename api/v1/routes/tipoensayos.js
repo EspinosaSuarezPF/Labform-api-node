@@ -5,7 +5,7 @@ const controller = require("./../controllers/tipoensayos");
 
 router.route("/")
 .get(controller.get)
-.post();
+.post(controller.post);
 /*
 .get()
 .post()

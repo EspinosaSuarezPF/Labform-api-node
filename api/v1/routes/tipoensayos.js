@@ -1,15 +1,17 @@
 "use strict";
 
 const router = require("express").Router();
-const controller = require("./../controllers/tipoensayos");
+const controller = require("./../controllers/tiposensayos");
 
 router.route("/")
-
 .get()
-.post(controller.post)
+.post();
+/*
+.get()
+.post()
 .put()
 .delete();
-
+*/
 
 router.route("/:id")
     .get()

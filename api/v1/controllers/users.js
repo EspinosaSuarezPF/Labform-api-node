@@ -68,9 +68,15 @@ exports.post = (req, res, next) => {
         });
 };
 
-exports.get = (req, res, next) => {
-    const user = req.user;
-    res.json(user);
+
+exports.getById=(req,res,next,id)=>{
+  User.FindById(id)
+  .then(tipoensayo=>{
+      res.json(tipoensayo);
+  })
+  .catch(err =>{
+      next(new Error(err));
+  });  
 };
 
 

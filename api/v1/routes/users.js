@@ -18,7 +18,6 @@ router.route("/logout")
     .post(controller.validateToken,controller.logout);
 
 router.route("/:id")
-    .get(controller.validateToken,controller.get)
     .put(controller.validateToken,controller.put)
     .delete(controller.validateToken,controller.delete);
 
